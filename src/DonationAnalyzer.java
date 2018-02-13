@@ -158,6 +158,11 @@ public class DonationAnalyzer {
 }
 
 class Donor {
+	/**
+	 * Purpose: A data structure for donors. Store the name and zip_code for each donor, because the 
+	 * combination of name and zip_code is unique for each donor.
+	 * The equals and hashcode methods are overrided.
+	 */
 	String NAME;
 	String ZIP_CODE;
 	public Donor(String name, String zip) {
@@ -179,6 +184,9 @@ class Donor {
 }
 
 class Date {
+	/**
+	 * Purpose: A data structure for date which contains year, month and day.
+	 */
 	String month;
 	String date;
 	String year;
@@ -196,6 +204,10 @@ class Date {
 }
 
 class Record {
+	/**
+	 * Purpose: A data structure for records which can simplify the input string and discard 
+	 * the useless information.
+	 */
 	String CMTE_ID;
 	String NAME;
 	String ZIP_CODE;
@@ -213,6 +225,10 @@ class Record {
 }
 
 class Recipient {
+	/**
+	 * Purpose: A data structure for recipients which contains CMTE_ID, zip_code and donation year. 
+	 * The equals and hashcode methods are overrided. 
+	 */
 	String CMTE_ID;
 	String ZIP_CODE;
 	String year;
@@ -239,6 +255,10 @@ class Recipient {
 }
 
 class Transaction {
+	/**
+	 * Purpose: A data structure for transactions which contains the total number of transactions, the total
+	 * amount of contributions, and a list of contributions which stores the amount of each contribution.
+	 */
 	int numberOfTransactions;
 	double totalAmount;
 	List<String> listOfContributions;
