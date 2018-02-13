@@ -109,16 +109,13 @@ public class DonationAnalyzer {
 		if (record.CMTE_ID.equals("empty") || record.TRANSACTION_AMT.equals("empty") || Double.parseDouble(record.TRANSACTION_AMT) < 0) {
 			return false;
 		}
-		if (record.NAME.equals("empty")) {
-			return false;
-		}
-		if (record.TRANSACTION_DT.equals("empty")) {
+		if (record.NAME.equals("empty") || record.TRANSACTION_DT.equals("empty")) {
 			return false;
 		}
 		int m = Integer.parseInt(record.TRANSACTION_DT.substring(0, 2));
 		int d = Integer.parseInt(record.TRANSACTION_DT.substring(2, 4));
 		int y = Integer.parseInt(record.TRANSACTION_DT.substring(4));
-		if (d < 1 || d > 31 || m < 1 || m > 12 || y < 2013 || y > 2018) {
+		if (d < 1 || d > 31 || m < 1 || m > 12 || y > 2018) {
 			return false;
 		}
 		return true;
